@@ -1,6 +1,4 @@
-﻿# AI-Based Identity-Centric Zero Trust Access Control Platform
-
-Production-oriented full-stack Zero Trust SaaS-style platform using FastAPI, PostgreSQL/SQLite, React, and Docker.
+﻿# An AI-assisted identity-centric Zero Trust access control platform that continuously evaluates user, device, network, and behavioral signals   to make adaptive access decisions.
 
 ## What This Delivers
 
