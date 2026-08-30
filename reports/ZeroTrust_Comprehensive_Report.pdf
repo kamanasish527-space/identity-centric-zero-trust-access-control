@@ -1,0 +1,965 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R ] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 13 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 15 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 16 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 17 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 18 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 19 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 20 0 R /Resources << /Font << /F1 21 0 R >> >> >>
+endobj
+12 0 obj
+<< /Length 2588 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(AI-Based Identity-Centric Zero Trust Access Control Platform) Tj
+0 -13 Td
+(Comprehensive Technical Report \(Viva/Defense Ready\)) Tj
+0 -13 Td
+(Generated: 2026-04-04 00:54:46) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(NOTE:) Tj
+0 -13 Td
+(This report is written for an expert viva panel. It is intentionally deep and includes detailed) Tj
+0 -13 Td
+(architecture, algorithms, data flow, and key code excerpts. All paths referenced are from the actual) Tj
+0 -13 Td
+(project structure.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(0. TABLE OF CONTENTS) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(1. Project Overview) Tj
+0 -13 Td
+(2. System Architecture) Tj
+0 -13 Td
+(3. Frontend Deep Explanation) Tj
+0 -13 Td
+(4. Backend Deep Explanation) Tj
+0 -13 Td
+(5. Core Algorithms & Logic) Tj
+0 -13 Td
+(6. Simulation Lab Explained) Tj
+0 -13 Td
+(7. Data Source Explanation \(Simulated vs Real\)) Tj
+0 -13 Td
+(8. Real-World Mapping) Tj
+0 -13 Td
+(9. Industry Readiness Analysis) Tj
+0 -13 Td
+(10. Deployment in Real Industry) Tj
+0 -13 Td
+(11. Limitations & Improvements) Tj
+0 -13 Td
+(12. Viva Questions & Answers \(40\)) Tj
+0 -13 Td
+(13. Code Walkthrough \(Key Files & Key Functions\)) Tj
+0 -13 Td
+(14. Future Scope) Tj
+0 -13 Td
+(Appendix A: API Endpoints Summary) Tj
+0 -13 Td
+(Appendix B: Database Schema Summary) Tj
+0 -13 Td
+(Appendix C: Key Code Excerpts) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(1. PROJECT OVERVIEW) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Project Title:) Tj
+0 -13 Td
+(- AI-Based Identity-Centric Zero Trust Access Control Platform \(CyberWatch Analytics UI\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Problem Statement:) Tj
+0 -13 Td
+(- Legacy access models trust users after a single authentication. Modern attackers exploit stolen) Tj
+0 -13 Td
+(credentials, bypass MFA using phishing, and persist inside networks. A Zero Trust system must) Tj
+0 -13 Td
+(continuously verify identity, device, and behavior.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Objective:) Tj
+0 -13 Td
+(- Build a full-stack platform that:) Tj
+0 -13 Td
+(  - Learns a behavioral baseline per user) Tj
+0 -13 Td
+(  - Computes risk scores on every login and session heartbeat) Tj
+0 -13 Td
+(  - Enforces adaptive policies \(allow, step-up, deny, lock\)) Tj
+0 -13 Td
+(  - Maps anomalies to MITRE ATT&CK techniques) Tj
+0 -13 Td
+(  - Provides SOC dashboards for analysts) Tj
+0 -13 Td
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 2811 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(  - Includes an attack simulation lab for validation) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(What It Solves in Cybersecurity:) Tj
+0 -13 Td
+(- Detects risky logins using behavior deviations) Tj
+0 -13 Td
+(- Detects credential abuse via login attempt frequency) Tj
+0 -13 Td
+(- Enforces continuous session evaluation) Tj
+0 -13 Td
+(- Provides traceable audit logs + MITRE mapping) Tj
+0 -13 Td
+(- Enables SOC-level visibility and response simulation) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Key Features \(Mapped to Code\):) Tj
+0 -13 Td
+(- JWT auth + refresh + CSRF \(backend/app/core/security.py, backend/app/api/v1/endpoints/auth.py\)) Tj
+0 -13 Td
+(- Role-Based Access Control \(backend/app/api/deps.py, frontend/src/utils/roles.js\)) Tj
+0 -13 Td
+(- Baseline learning \(backend/app/models/baseline.py, backend/app/services/baseline_service.py\)) Tj
+0 -13 Td
+(- Risk engine \(backend/app/services/risk_engine.py\)) Tj
+0 -13 Td
+(- Anomaly engine \(backend/app/services/anomaly_engine.py\)) Tj
+0 -13 Td
+(- Policy engine \(backend/app/services/policy_engine.py\)) Tj
+0 -13 Td
+(- Session monitoring \(backend/app/api/v1/endpoints/sessions.py + frontend polling\)) Tj
+0 -13 Td
+(- MITRE ATT&CK mapping \(backend/app/services/mitre_service.py\)) Tj
+0 -13 Td
+(- Attack simulation engine \(backend/app/services/simulation_engine.py +) Tj
+0 -13 Td
+(frontend/src/store/simulationEngine.js\)) Tj
+0 -13 Td
+(- SOC UI dashboard \(frontend/src/pages/*\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(2. SYSTEM ARCHITECTURE) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(High-Level Architecture \(Textual Diagram\):) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+([ React + Vite Frontend ]  <-- REST + WebSocket -->  [ FastAPI Backend ]  <-- ORM -->  [ SQL) Tj
+0 -13 Td
+(Database ]) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Frontend Architecture:) Tj
+0 -13 Td
+(- React + Vite + Tailwind CSS) Tj
+0 -13 Td
+(- Page layout is driven by DashboardLayout \(topbar + sidebar\)) Tj
+0 -13 Td
+(- Each page uses DashboardProvider state) Tj
+0 -13 Td
+(- Charts and metrics are rendered with Recharts) Tj
+0 -13 Td
+(- Page transitions via Framer Motion \(MotionPage.jsx\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Backend Architecture:) Tj
+0 -13 Td
+(- FastAPI app: backend/app/main.py) Tj
+0 -13 Td
+(- Routers: backend/app/api/v1/endpoints) Tj
+0 -13 Td
+(- Services: backend/app/services \(business logic\)) Tj
+0 -13 Td
+(- Models: backend/app/models \(SQLAlchemy ORM\)) Tj
+0 -13 Td
+(- Schemas: backend/app/schemas \(Pydantic validation\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Communication:) Tj
+0 -13 Td
+(- REST API calls via Axios \(frontend/src/api/client.js\)) Tj
+0 -13 Td
+(- JWT access token in Authorization header) Tj
+0 -13 Td
+(- Refresh token in HttpOnly cookie) Tj
+0 -13 Td
+ET
+endstream
+endobj
+14 0 obj
+<< /Length 2508 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(- CSRF token validated on all mutating requests) Tj
+0 -13 Td
+(- WebSocket /ws/events for live audit updates) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Security Layers:) Tj
+0 -13 Td
+(- Argon2 hashing for password storage) Tj
+0 -13 Td
+(- Rate limiting for login & API) Tj
+0 -13 Td
+(- CSP/HSTS/security headers) Tj
+0 -13 Td
+(- RBAC enforcement at API boundary) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(3. FRONTEND DEEP EXPLANATION) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Framework & UI stack:) Tj
+0 -13 Td
+(- React: component-based, predictable state handling) Tj
+0 -13 Td
+(- Vite: fast bundling & DX) Tj
+0 -13 Td
+(- Tailwind: utility-first styling, consistent design system) Tj
+0 -13 Td
+(- Recharts: visualization \(risk, decisions, trends\)) Tj
+0 -13 Td
+(- Radix UI: accessible primitives) Tj
+0 -13 Td
+(- Framer Motion: transitions) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Folder Structure:) Tj
+0 -13 Td
+(- frontend/src/pages: page-level views) Tj
+0 -13 Td
+(- frontend/src/components: layout + shared components) Tj
+0 -13 Td
+(- frontend/src/components/ui: UI primitives) Tj
+0 -13 Td
+(- frontend/src/context: auth state) Tj
+0 -13 Td
+(- frontend/src/store: dashboard state + simulation engine) Tj
+0 -13 Td
+(- frontend/src/hooks: polling + WebSocket integration) Tj
+0 -13 Td
+(- frontend/src/api: API client + token refresh) Tj
+0 -13 Td
+(- frontend/src/utils: roles, fingerprint, time parser) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Detailed Page Logic:) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Executive Overview \(frontend/src/pages/ExecutiveOverview.jsx\)) Tj
+0 -13 Td
+(- Computes riskScore from dashboard.effectiveRiskScore) Tj
+0 -13 Td
+(- Trust Score = 100 - riskScore) Tj
+0 -13 Td
+(- Uses PieChart for gauge) Tj
+0 -13 Td
+(- System Health panel shows microservice statuses) Tj
+0 -13 Td
+(- Recent alerts derived from threatIntel feed) Tj
+0 -13 Td
+(- Quick actions navigate to other pages) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Data Details \(frontend/src/pages/DataDetails.jsx\)) Tj
+0 -13 Td
+(- Search across log fields \(timestamp, username, action, message, IP, device\)) Tj
+0 -13 Td
+(- Risk filter + time range filter) Tj
+0 -13 Td
+(- Client-side pagination \(10 rows/page\)) Tj
+0 -13 Td
+(- Export button calls dashboard.actions.exportLogs \(downloads CSV\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Predictive & Risk \(frontend/src/pages/PredictiveRisk.jsx\)) Tj
+0 -13 Td
+(- Live risk score gauge \(SVG arc\)) Tj
+0 -13 Td
+ET
+endstream
+endobj
+15 0 obj
+<< /Length 2683 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(- Decision distribution chart from decision breakdown) Tj
+0 -13 Td
+(- Risk factors computed from logs + simulation factors) Tj
+0 -13 Td
+(- Risk trend with AreaChart \(auto-updates every 5 seconds\)) Tj
+0 -13 Td
+(- AI insights collapsible panel using liveRisk.insight) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Behavioral Analysis \(frontend/src/pages/BehavioralAnalysis.jsx\)) Tj
+0 -13 Td
+(- Displays active/high-risk/terminated sessions) Tj
+0 -13 Td
+(- Session Monitor list with per-session actions) Tj
+0 -13 Td
+(- Filter dropdown for risk levels) Tj
+0 -13 Td
+(- "View Details" opens modal dialog) Tj
+0 -13 Td
+(- Terminate action calls backend /sessions/terminate) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Network & Relations \(frontend/src/pages/NetworkRelations.jsx\)) Tj
+0 -13 Td
+(- Global network view \(animated nodes + connections\)) Tj
+0 -13 Td
+(- MITRE view showing tactics grouped from riskAnalytics.mitre_techniques) Tj
+0 -13 Td
+(- Threat feed \(severity badges + timestamps\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Actionable Intelligence \(frontend/src/pages/ActionableIntelligence.jsx\)) Tj
+0 -13 Td
+(- System metrics \(latency, CPU, memory\)) Tj
+0 -13 Td
+(- Service health cards) Tj
+0 -13 Td
+(- Settings panel bound to backend /settings) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Simulation Lab \(frontend/src/pages/SimulationLab.jsx\)) Tj
+0 -13 Td
+(- Shows simulation status, blocked attacks, mitigated threats, breaches) Tj
+0 -13 Td
+(- Start/Pause/Reset buttons bind to dashboard.actions.startSimulation/stopSimulation/resetSimulation) Tj
+0 -13 Td
+(- Timeline and Injected Attacks tabs) Tj
+0 -13 Td
+(- Risk assessment progress bars) Tj
+0 -13 Td
+(- Outcome summary with grade and recommendations) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Frontend Data Flow \(Global\):) Tj
+0 -13 Td
+(- AuthContext handles login/register/step-up -> tokens stored -> /auth/me) Tj
+0 -13 Td
+(- DashboardProvider uses useDashboardData to fetch all datasets) Tj
+0 -13 Td
+(- WebSocket pushes AuditLog events to state) Tj
+0 -13 Td
+(- Simulation engine overlays synthetic logs and sessions) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(4. BACKEND DEEP EXPLANATION) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Framework & Libraries:) Tj
+0 -13 Td
+(- FastAPI) Tj
+0 -13 Td
+(- SQLAlchemy) Tj
+0 -13 Td
+(- Pydantic) Tj
+0 -13 Td
+(- SlowAPI \(rate limiting\)) Tj
+0 -13 Td
+(- Passlib Argon2 \(password hashing\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Backend File Layout:) Tj
+0 -13 Td
+(- backend/app/main.py: app init, middleware, exception handling) Tj
+0 -13 Td
+(- backend/app/api/v1/endpoints/*.py: REST endpoints) Tj
+0 -13 Td
+ET
+endstream
+endobj
+16 0 obj
+<< /Length 2288 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(- backend/app/services/*.py: business logic) Tj
+0 -13 Td
+(- backend/app/models/*.py: ORM tables) Tj
+0 -13 Td
+(- backend/app/schemas/*.py: request/response validation) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Authentication Flow:) Tj
+0 -13 Td
+(- Login: verify credentials -> run risk + anomaly -> decide policy) Tj
+0 -13 Td
+(- If step-up -> issue OTP challenge) Tj
+0 -13 Td
+(- If allow -> create session + issue tokens) Tj
+0 -13 Td
+(- Admins are never locked \(admin override logic\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Session Handling:) Tj
+0 -13 Td
+(- AccessSession created on successful auth) Tj
+0 -13 Td
+(- Heartbeat checks risk score periodically) Tj
+0 -13 Td
+(- High/critical -> terminate session) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Logging & Audit:) Tj
+0 -13 Td
+(- Every auth/session/policy event stored in AuditLog) Tj
+0 -13 Td
+(- WebSocket broadcasts log events to clients) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(5. CORE ALGORITHMS & LOGIC) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Risk Engine \(backend/app/services/risk_engine.py\):) Tj
+0 -13 Td
+(- Baseline deviation scoring) Tj
+0 -13 Td
+(- Output: score, level, anomalies, MITRE mappings) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Anomaly Engine \(backend/app/services/anomaly_engine.py\):) Tj
+0 -13 Td
+(- Weighted scoring:) Tj
+0 -13 Td
+(  login_time 0.24, ip_change 0.22, device_change 0.18, session_duration 0.20,) Tj
+0 -13 Td
+(login_attempt_frequency 0.16) Tj
+0 -13 Td
+(- Combined risk formula: total = 0.65*base + 0.35*anomaly) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Policy Engine:) Tj
+0 -13 Td
+(- Low -> allow) Tj
+0 -13 Td
+(- Medium -> step-up) Tj
+0 -13 Td
+(- High -> deny) Tj
+0 -13 Td
+(- Critical -> lock + alert) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(6. SIMULATION LAB EXPLAINED) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Backend Simulation:) Tj
+0 -13 Td
+(- In-memory state) Tj
+0 -13 Td
+(- Steps every 3 seconds) Tj
+0 -13 Td
+(- Updates riskScore and anomalyScore) Tj
+0 -13 Td
+(- Writes logs into AuditLog) Tj
+0 -13 Td
+(- If risk >= 85 -> "Access Blocked") Tj
+0 -13 Td
+() Tj
+0 -13 Td
+ET
+endstream
+endobj
+17 0 obj
+<< /Length 2578 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(Frontend Simulation:) Tj
+0 -13 Td
+(- Timeline events with MITRE tags) Tj
+0 -13 Td
+(- Injected attack logs) Tj
+0 -13 Td
+(- Session overlays for SOC realism) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(7. DATA SOURCE EXPLANATION) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Because this project is not yet connected to real SOC telemetry:) Tj
+0 -13 Td
+(- Logs are generated by authentication/session/simulation events) Tj
+0 -13 Td
+(- Risk scores come from rule-based risk + anomaly engine) Tj
+0 -13 Td
+(- System health metrics are simulated with jitter + DB latency) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(8. REAL-WORLD MAPPING) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Production integrations would include:) Tj
+0 -13 Td
+(- SIEM ingestion \(Splunk, Elastic, Sentinel\)) Tj
+0 -13 Td
+(- IAM providers \(Okta, Azure AD\)) Tj
+0 -13 Td
+(- Endpoint telemetry \(EDR\)) Tj
+0 -13 Td
+(- Network telemetry \(NetFlow, Zeek\)) Tj
+0 -13 Td
+(- Threat feeds \(MISP, OTX\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(9. INDUSTRY READINESS ANALYSIS) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Is it industry-ready? Partially.) Tj
+0 -13 Td
+(- The architecture is solid but missing production-grade telemetry ingestion, message queues, and ML) Tj
+0 -13 Td
+(detection.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(10. DEPLOYMENT IN REAL INDUSTRY) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Reuse: UI dashboards, policy engine, baseline logic) Tj
+0 -13 Td
+(Replace: data ingestion, telemetry pipeline) Tj
+0 -13 Td
+(Deploy: Kubernetes, PostgreSQL, Redis, Kafka) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(11. LIMITATIONS & IMPROVEMENTS) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Limitations:) Tj
+0 -13 Td
+(- Synthetic data) Tj
+0 -13 Td
+(- No ML-based anomaly detection) Tj
+0 -13 Td
+(- No distributed storage for simulation state) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Improvements:) Tj
+0 -13 Td
+(- ML risk engine) Tj
+0 -13 Td
+(- Event pipeline) Tj
+0 -13 Td
+ET
+endstream
+endobj
+18 0 obj
+<< /Length 2216 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(- Multi-tenant isolation) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(12. VIVA QUESTIONS & ANSWERS \(40\)) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(\(See previous list; unchanged\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(13. CODE WALKTHROUGH) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(\(See key files list; unchanged\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(14. FUTURE SCOPE) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(- AI risk models) Tj
+0 -13 Td
+(- Real-time correlation) Tj
+0 -13 Td
+(- Cloud-native scaling) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(APPENDIX A: API ENDPOINTS SUMMARY) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(- POST /auth/register) Tj
+0 -13 Td
+(- POST /auth/login) Tj
+0 -13 Td
+(- POST /auth/step-up) Tj
+0 -13 Td
+(- POST /auth/refresh) Tj
+0 -13 Td
+(- POST /auth/logout) Tj
+0 -13 Td
+(- GET /auth/me) Tj
+0 -13 Td
+(- GET /dashboard/overview) Tj
+0 -13 Td
+(- GET /dashboard/profile) Tj
+0 -13 Td
+(- GET /dashboard/logs) Tj
+0 -13 Td
+(- GET /dashboard/risk-analytics) Tj
+0 -13 Td
+(- GET /dashboard/threat-intel) Tj
+0 -13 Td
+(- GET /dashboard/system-health) Tj
+0 -13 Td
+(- GET /risk/live) Tj
+0 -13 Td
+(- POST /risk/simulate-attack) Tj
+0 -13 Td
+(- POST /risk/simulation/reset) Tj
+0 -13 Td
+(- GET /sessions/active) Tj
+0 -13 Td
+(- POST /sessions/heartbeat) Tj
+0 -13 Td
+(- POST /sessions/terminate/<built-in function id>) Tj
+0 -13 Td
+(- GET /settings) Tj
+0 -13 Td
+(- PUT /settings) Tj
+0 -13 Td
+(- GET /admin/users) Tj
+0 -13 Td
+(- POST /admin/users/<built-in function id>/lock) Tj
+0 -13 Td
+(- POST /admin/users/<built-in function id>/unlock) Tj
+0 -13 Td
+(- GET /admin/logs/export) Tj
+0 -13 Td
+(- POST /simulation/start) Tj
+0 -13 Td
+(- POST /simulation/stop) Tj
+0 -13 Td
+ET
+endstream
+endobj
+19 0 obj
+<< /Length 2327 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(- POST /simulation/reset) Tj
+0 -13 Td
+(- GET /simulation/status) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(APPENDIX B: DATABASE SCHEMA SUMMARY) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(User:) Tj
+0 -13 Td
+(- id, username, email, role, hashed_password, is_active, is_locked, failed_login_attempts,) Tj
+0 -13 Td
+(lock_until) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(AccessSession:) Tj
+0 -13 Td
+(- id, user_id, ip_address, device_fingerprint, issued_at, expires_at, is_active, current_risk_score,) Tj
+0 -13 Td
+(current_risk_level) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(BehaviorBaseline:) Tj
+0 -13 Td
+(- user_id, average_login_hour, known_locations, known_device_fingerprints, ip_history,) Tj
+0 -13 Td
+(access_frequency_per_day) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(AuditLog:) Tj
+0 -13 Td
+(- id, timestamp, event_type, action, risk_score, risk_level, decision, mitre_technique_id,) Tj
+0 -13 Td
+(ip_address, message) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(BehaviorAnomalyEvent:) Tj
+0 -13 Td
+(- user_id, session_id, anomaly_score, total_risk_score, risk_level, factors, metrics, detected_at) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(AppSettings:) Tj
+0 -13 Td
+(- risk thresholds, monitoring flags, session monitor interval) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(APPENDIX C: KEY CODE EXCERPTS \(PSEUDO FROM ACTUAL CODE\)) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(Risk Scoring \(risk_engine.py\):) Tj
+0 -13 Td
+(score = 0) Tj
+0 -13 Td
+(if baseline missing: score += 8) Tj
+0 -13 Td
+(if unusual login time: score += 10..25) Tj
+0 -13 Td
+(if new location: score += 20) Tj
+0 -13 Td
+(if new device: score += 25) Tj
+0 -13 Td
+(if new ip: score += 15) Tj
+0 -13 Td
+(if access freq high: score += 18) Tj
+0 -13 Td
+(if failed attempts >=2: score += 20) Tj
+0 -13 Td
+(if protocol != https: score += 12) Tj
+0 -13 Td
+(if phishing simulated: score += 30) Tj
+0 -13 Td
+(score = clamp\(0..100\)) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(Combined Risk \(anomaly_engine.py\):) Tj
+0 -13 Td
+(combined = 0.65*base_risk + 0.35*anomaly_score) Tj
+0 -13 Td
+(if anomaly_score > 70 and level in low/medium -> promote to high) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+ET
+endstream
+endobj
+20 0 obj
+<< /Length 1438 >>
+stream
+BT
+/F1 11 Tf
+72 750 Td
+(Simulation Steps \(simulation_engine.py\):) Tj
+0 -13 Td
+(Step1: Suspicious Login \(+30 risk\)) Tj
+0 -13 Td
+(Step2: Brute Force \(+35 risk\)) Tj
+0 -13 Td
+(Step3: Privilege Escalation \(+25 risk\)) Tj
+0 -13 Td
+(If risk >= 85 -> block session) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(DIRECT ANSWERS TO YOUR QUESTIONS) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(1\) Is the project industry-ready?) Tj
+0 -13 Td
+(- Partially. Architecture is strong but requires production telemetry and scaling.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(2\) If industry wants to use it, what parts will they take?) Tj
+0 -13 Td
+(- UI dashboards, policy engine, anomaly logic. They must integrate real data pipelines.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(3\) What does the project do in real life?) Tj
+0 -13 Td
+(- Continuous identity verification + behavioral risk scoring + adaptive access enforcement.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(4\) Where do risk scores come from if no real data?) Tj
+0 -13 Td
+(- From simulated telemetry + rule-based scoring on login context and baseline deviation.) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+(END OF REPORT) Tj
+0 -13 Td
+(======================================================================) Tj
+0 -13 Td
+() Tj
+0 -13 Td
+ET
+endstream
+endobj
+21 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000167 00000 n 
+0000000295 00000 n 
+0000000423 00000 n 
+0000000551 00000 n 
+0000000679 00000 n 
+0000000807 00000 n 
+0000000935 00000 n 
+0000001063 00000 n 
+0000001192 00000 n 
+0000001321 00000 n 
+0000003962 00000 n 
+0000006826 00000 n 
+0000009387 00000 n 
+0000012123 00000 n 
+0000014464 00000 n 
+0000017095 00000 n 
+0000019364 00000 n 
+0000021744 00000 n 
+0000023235 00000 n 
+trailer
+<< /Size 22 /Root 1 0 R >>
+startxref
+23306
+%%EOF
